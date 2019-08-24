@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { MediadorComponent } from './mediador/mediador.component';
+import { FuncionarioComponent } from './funcionario/funcionario.component';
 
 const appRoutes: Routes = [
   { path: 'Login', component: LoginComponent },
@@ -13,7 +15,9 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    MediadorComponent,
+    FuncionarioComponent
   ],
   imports: [
     RouterModule.forRoot(
