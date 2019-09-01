@@ -5,10 +5,17 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { MediadorComponent } from './mediador/mediador.component';
-import { FuncionarioComponent } from './funcionario/funcionario.component';
+import { CadastrarFuncionarioComponent } from './funcionario/cadastrar/cadastrar.funcionario.component';
+import { ListarFuncionarioComponent } from './funcionario/listar/listar.funcionario.component';
+import { EditarFuncionarioComponent } from './funcionario/editar/editar.funcionario.component';
 
 const appRoutes: Routes = [
-  { path: 'Login', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'painel', component: MediadorComponent },
+  { path: 'funcionarios', component: ListarFuncionarioComponent },
+  { path: 'cadastroFuncionarios', component: CadastrarFuncionarioComponent },
+  { path: 'editaFuncionario', component: EditarFuncionarioComponent },
+  { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/Login', pathMatch: 'full'}
 ];
 
@@ -17,7 +24,9 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     MediadorComponent,
-    FuncionarioComponent
+    CadastrarFuncionarioComponent,
+    ListarFuncionarioComponent,
+    EditarFuncionarioComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -28,6 +37,7 @@ const appRoutes: Routes = [
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent], 
+  exports: []
 })
 export class AppModule { }
