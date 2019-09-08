@@ -8,15 +8,22 @@ import { MediadorComponent } from './mediador/mediador.component';
 import { CadastrarFuncionarioComponent } from './funcionario/cadastrar/cadastrar.funcionario.component';
 import { ListarFuncionarioComponent } from './funcionario/listar/listar.funcionario.component';
 import { EditarFuncionarioComponent } from './funcionario/editar/editar.funcionario.component';
+import { CadastrarCardapioComponent } from './cardapio/cadastrar/cadastrar.cardapio.component';
+import { ListarCardapioComponent } from './cardapio/listar/listar.cardapio.component';
+import { EditarCardapioComponent } from './cardapio/editar/editar.cardapio.component';
+
 
 const appRoutes: Routes = [
+  { path: '', redirectTo: '/Login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'painel', component: MediadorComponent },
   { path: 'funcionarios', component: ListarFuncionarioComponent },
   { path: 'cadastroFuncionarios', component: CadastrarFuncionarioComponent },
   { path: 'editaFuncionario', component: EditarFuncionarioComponent },
-  { path: 'login', component: LoginComponent },
-  { path: '', redirectTo: '/Login', pathMatch: 'full'}
+  { path: 'listarFuncionarios', component: ListarFuncionarioComponent },
+  { path: 'cadastroCardapio', component: CadastrarCardapioComponent },
+  { path: 'editaCardapio', component: EditarCardapioComponent },
+  { path: 'listarCardapio', component: ListarCardapioComponent }
 ];
 
 @NgModule({
@@ -26,7 +33,10 @@ const appRoutes: Routes = [
     MediadorComponent,
     CadastrarFuncionarioComponent,
     ListarFuncionarioComponent,
-    EditarFuncionarioComponent
+    EditarFuncionarioComponent,
+    CadastrarCardapioComponent,
+    ListarCardapioComponent,
+    EditarCardapioComponent
   ],
   imports: [
     RouterModule.forRoot(
