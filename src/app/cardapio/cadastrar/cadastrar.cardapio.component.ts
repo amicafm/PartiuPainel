@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Item } from 'src/app/models/item';
 
 @Component({
   selector: 'app-cadastrar-cardapio',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cadastrar.cardapio.component.css']
 })
 export class CadastrarCardapioComponent implements OnInit {
+  public formGroup: FormGroup;
 
-  constructor() { }
+  constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.criarFormulario();
   }
 
+  criarFormulario(){
+    this.formGroup = this.formBuilder.group({
+        nome: ['', Validators.required],
+        categoria: ['', Validators.required],
+        valor: ['', Validators.required]
+    });
+  }
+
+  adicionarItem(item: Item){
+    //this.cardapioService.adicionarItem(item);
+  }
 }

@@ -16,38 +16,16 @@
                         <button type="button" class="btn btn-success" routerLink="/cadastrarfuncionario">+ Cadastrar Fucinonário</button></th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody *ngFor="let funcionario of listarFuncionarios">
                 <tr>
-                    <th scope="row">Maria Clementina da Silva</th>
-                    <td>44678179857</td>
-                    <td>MACLSI</td>
-                    <td>mariacsilva@gmail.com</td>
-                    <td>(11) 95544-6234</td>
+                    <th scope="row">{{funcionario.nome}}</th>
+                    <td>{{funcionario.cpf}}</td>
+                    <td>{{funcionario.usuario}}</td>
+                    <td>{{funcionario.email}}</td>
+                    <td>{{funcionario.telefone}}</td>
                     <td>
                         <button type="button" class="btn btn-primary" routerLink="/editarfuncionario">Editar</button>
-                        <button type="button" class="btn btn-danger">Deletar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Ricardo Soares Mendes</th>
-                    <td>47638199257</td>
-                    <td>RISOME</td>
-                    <td>ricsomen@gmail.com</td>
-                    <td>(11) 97741-6587</td>
-                    <td>
-                        <button type="button" class="btn btn-primary" routerLink="/editarfuncionario">Editar</button>
-                        <button type="button" class="btn btn-danger">Deletar</button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">Cezar Tomaz de Lira</th>
-                    <td>64628169351</td>
-                    <td>CETOLI</td>
-                    <td>cezarzzlira@gmail.com</td>
-                    <td>(11) 93741-1537</td>
-                    <td>
-                        <button type="button" class="btn btn-primary" routerLink="/editarfuncionario">Editar</button>
-                        <button type="button" class="btn btn-danger">Deletar</button>
+                        <button type="button" class="btn btn-danger" (click)="excluirFuncionario(funcionario.id)">Deletar</button>
                     </td>
                 </tr>
             </tbody>
