@@ -12,6 +12,8 @@ import { EditarFuncionarioComponent } from './funcionario/editar/editar.funciona
 import { CadastrarCardapioComponent } from './cardapio/cadastrar/cadastrar.cardapio.component';
 import { ListarCardapioComponent } from './cardapio/listar/listar.cardapio.component';
 import { EditarCardapioComponent } from './cardapio/editar/editar.cardapio.component';
+import { LoginService } from './services/login.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 const appRoutes: Routes = [
@@ -47,9 +49,10 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent], 
   exports: []
 })

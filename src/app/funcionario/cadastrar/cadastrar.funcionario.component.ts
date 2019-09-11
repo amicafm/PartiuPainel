@@ -29,8 +29,27 @@ export class CadastrarFuncionarioComponent implements OnInit {
     });
   }
 
-  adicionarFuncionario(funcionario: Funcionario){
-    //this.funcionarioService.adicionarFuncionario(funcionario);
+  adicionarFuncionario(){
+      let nome = this.formGroup.get("nome").value;
+      let cpf = this.formGroup.get("cpf").value;
+      // let usuario = this.formGroup.get("cpf").value;
+      let senha = this.formGroup.get("senha").value;
+      let genero = this.formGroup.get("genero").value;
+      let email = this.formGroup.get("email").value;
+      let telefone = this.formGroup.get("telefone").value;
+      let nasc = this.formGroup.get("nasc").value;
+      // this.loginService.login(email, senha).subscribe((data: Usuario)=>{
+      //   if (data["id"]){
+      //     this.usuario =  data
+      //     localStorage.setItem('usuario', JSON.stringify(this.usuario));
+          
+      //     console.log("Usuario logado; id = "+data["id"])
+      //     this.router.navigate(['/mediador/']);
+      //   }else{
+      //     console.log("Usuario Invalido")
+      //   }
+      // })
+    // }
   }
 
 }
