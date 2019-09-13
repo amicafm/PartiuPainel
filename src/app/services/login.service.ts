@@ -15,4 +15,8 @@ export class LoginService {
   login(email: string, senha: string){
     return this.http.get(LoginService.url+"login?email="+email+"&senha="+senha);
   }
+
+  getCnpj(id:number){
+    return this.http.get(LoginService.url+"getRestauranteByIdGarcom?idGarcom="+id)
+  }
 }

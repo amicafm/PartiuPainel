@@ -14,6 +14,7 @@ import { ListarCardapioComponent } from './cardapio/listar/listar.cardapio.compo
 import { EditarCardapioComponent } from './cardapio/editar/editar.cardapio.component';
 import { LoginService } from './services/login.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FuncionarioService } from './services/funcionario.service';
 
 
 const appRoutes: Routes = [

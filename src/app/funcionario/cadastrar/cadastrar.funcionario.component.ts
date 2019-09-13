@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Funcionario } from 'src/app/models/funcionario';
+import { FuncionarioService } from 'src/app/services/funcionario.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar-funcionario',
@@ -10,7 +12,7 @@ import { Funcionario } from 'src/app/models/funcionario';
 export class CadastrarFuncionarioComponent implements OnInit {
   public formGroup: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private router: Router, private formBuilder: FormBuilder, private funcService: FuncionarioService) { }
 
   ngOnInit() {
     this.criarFormulario();
@@ -18,38 +20,38 @@ export class CadastrarFuncionarioComponent implements OnInit {
 
   criarFormulario(){
     this.formGroup = this.formBuilder.group({
-        nome: ['', Validators.required],
-        cfp: ['', Validators.required],
+        
+      cpf: ['', Validators.required],
+      nome: ['', Validators.required],
+      nascimento: ['', Validators.required],
+      email: ['', Validators.required],
+      telefone: ['', Validators.required],
         usuario: ['', Validators.required],
-        senha: ['', Validators.required],
         genero: ['', Validators.required],
-        email: ['', Validators.required],
-        telefone: ['', Validators.required],
-        nascimento: ['', Validators.required]
+        senha: ['', Validators.required]
     });
   }
 
   adicionarFuncionario(){
-      let nome = this.formGroup.get("nome").value;
+      let tipo = "garcom"
       let cpf = this.formGroup.get("cpf").value;
-      // let usuario = this.formGroup.get("cpf").value;
-      let senha = this.formGroup.get("senha").value;
-      let genero = this.formGroup.get("genero").value;
+      let nome = this.formGroup.get("nome").value;
+      let nasc = this.formGroup.get("nascimento").value;
       let email = this.formGroup.get("email").value;
-      let telefone = this.formGroup.get("telefone").value;
-      let nasc = this.formGroup.get("nasc").value;
-      // this.loginService.login(email, senha).subscribe((data: Usuario)=>{
-      //   if (data["id"]){
-      //     this.usuario =  data
-      //     localStorage.setItem('usuario', JSON.stringify(this.usuario));
+      let telUnformated = this.formGroup.get("telefone").value;
+      let ddd = telUnformated.substring(0, 2);
+      let telefone = telUnformated.substring(2);
+      let genero = this.formGroup.get("genero").value;
+      let senha = "123";
+      // let usuario = this.formGroup.get("cpf").value;
+      
+      this.funcService.createFuncionario(tipo, cpf, nome, nasc, email, ddd, telefone, genero, senha).subscribe((data)=>{
+          console.log("Funcionário Criado")
+          this.router.navigate(['/listarfuncionario/']);
           
-      //     console.log("Usuario logado; id = "+data["id"])
-      //     this.router.navigate(['/mediador/']);
-      //   }else{
-      //     console.log("Usuario Invalido")
-      //   }
-      // })
-    // }
+      })
+      
+    
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Funcionario } from 'src/app/models/funcionario';
+import { FuncionarioService } from 'src/app/services/funcionario.service';
 
 @Component({
   selector: 'app-listar-funcionario',
@@ -9,11 +10,12 @@ import { Funcionario } from 'src/app/models/funcionario';
 export class ListarFuncionarioComponent implements OnInit {
   public listarFuncionarios: Funcionario[];
 
-  constructor() { }
+  constructor(private funcService: FuncionarioService) { }
 
-  ngOnInit() {
-    //this.funcionarioService.listarFuncionarios().subscribe(funcionarioss => 
-    //  {this.listarFuncionarios = funcionarios;});
+  ngOnInit() {  
+    this.funcService.listarFuncionarios().subscribe(data => {
+      this.listarFuncionarios = data as Funcionario[]
+    });
   }
 
   excluirFuncionario(id: number){

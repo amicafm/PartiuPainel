@@ -5,6 +5,7 @@ import { Usuario } from '../models/usuario';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Login } from '../models/login';
 import { Router } from '@angular/router';
+import { Restaurante } from '../models/restaurante';
 
 
 @Component({
@@ -36,11 +37,20 @@ export class LoginComponent implements OnInit {
     let senha = this.formGroup.get("senha").value;
     this.loginService.login(email, senha).subscribe((data: Usuario)=>{
       if (data["id"]){
+
+        // if(data["tipo"] == "gerente"){}
         this.usuario =  data
-        localStorage.setItem('usuario', JSON.stringify(this.usuario));
+
+        this.loginService.getCnpj(data.id).subscribe((restaurante) =>{
+          console.log("TESTES"+restaurante)
+          localStorage.setItem('restaurante', JSON.stringify(restaurante))
+          localStorage.setItem('usuario', JSON.stringify(this.usuario));
+        })
         
-        console.log("Usuario logado; id = "+data["id"])
+        
+        console.log("Usuario logado; email = "+data["email"])
         this.router.navigate(['/mediador/']);
+
       }else{
         console.log("Usuario Invalido")
       }

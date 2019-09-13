@@ -12,25 +12,25 @@
                             <div class="row register-form">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" formControlName="nome" [(ngModel)]="funcionario.nome" placeholder="Nome" value="" />
+                                        <input type="text" class="form-control" formControlName="nome" placeholder="Nome" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" formControlName="cpf" [(ngModel)]="funcionario.cpf"placeholder="CPF" value="" />
+                                        <input type="text" class="form-control" formControlName="cpf" placeholder="CPF" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" formControlName="usuario" [(ngModel)]="funcionario.usuario"placeholder="Usuário de login" value="" />
+                                        <input type="text" class="form-control" formControlName="usuario" placeholder="Usuário de login" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control"  formControlName="senha" [(ngModel)]="funcionario.senha" placeholder="Senha" value="" />
+                                        <input type="password" class="form-control"  formControlName="senha" placeholder="Senha" value="" />
                                     </div>
                                     <div class="form-group">
                                         <div class="maxl">
                                             <label class="radio inline"> 
-                                                <input type="radio" name="gender" value="homem" formControlName="genero" [(ngModel)]="funcionario.genero" checked>
+                                                <input type="radio" name="genero" value="M" formControlName="genero" checked >
                                                 <span> Homem </span> 
                                             </label>
                                             <label class="radio inline" style="margin-left: 10px;"> 
-                                                <input type="radio" name="gender" value="mulher" formControlName="genero" [(ngModel)]="funcionario.genero">
+                                                <input type="radio" name="genero" value="F" formControlName="genero">
                                                 <span> Mulher </span> 
                                             </label>
                                         </div>
@@ -38,18 +38,18 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" formControlName="email" [(ngModel)]="funcionario.email"placeholder="Email" value="" />
+                                        <input type="email" class="form-control" formControlName="email" placeholder="Email" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" formControlName="telefone" [(ngModel)]="funcionario.telefone" placeholder="Telefone" value="" />
+                                        <input type="text" minlength="10" maxlength="11" name="txtEmpPhone" class="form-control" formControlName="telefone" placeholder="Telefone" value="" />
                                     </div>
                                     <div class="form-group">
                                         <div>
-                                            Nascimento: <input type="date" name="bday" formControlName="nascimento" [(ngModel)]="funcionario.nascimento" [value]="funcionario.nascimento | date:'yyyy-MM-dd'">
+                                            Nascimento: <input type="date" name="nascimento" formControlName="nascimento">
                                         </div>
                                     </div>
                                     <div style="margin-top: 50px;">
-                                        <button type="button" class="btnRegister" (click)="this.adicionarFuncionario(funcionario)">Cadastrar </button>
+                                        <button type="button" class="btnRegister" (click)="this.adicionarFuncionario()">Cadastrar </button>
                                     </div>
                                 </div>
                             </div>
