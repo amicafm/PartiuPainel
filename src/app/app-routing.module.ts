@@ -8,6 +8,9 @@ import { EditarFuncionarioComponent } from './funcionario/editar/editar.funciona
 import { CadastrarCardapioComponent } from './cardapio/cadastrar/cadastrar.cardapio.component';
 import { EditarCardapioComponent } from './cardapio/editar/editar.cardapio.component';
 import { ListarCardapioComponent } from './cardapio/listar/listar.cardapio.component';
+import { HomeComponent } from './widgets/home/home.component';
+import { ParceriasComponent } from './widgets/parcerias/parcerias.component';
+import { SobreComponent } from './widgets/sobre/sobre.component';
 
 
 const routes: Routes = [
@@ -19,7 +22,10 @@ const routes: Routes = [
   { path: 'editarfuncionario', component: EditarFuncionarioComponent },
   { path: 'cadastrarcardapio', component: CadastrarCardapioComponent },
   { path: 'editarcardapio', component: EditarCardapioComponent },
-  { path: 'listarcardapio', component: ListarCardapioComponent }
+  { path: 'listarcardapio', component: ListarCardapioComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'parcerias', component: ParceriasComponent },
+  { path: 'sobre', component: SobreComponent }
 ];
 
 @NgModule({

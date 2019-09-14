@@ -14,7 +14,9 @@ import { ListarCardapioComponent } from './cardapio/listar/listar.cardapio.compo
 import { EditarCardapioComponent } from './cardapio/editar/editar.cardapio.component';
 import { LoginService } from './services/login.service';
 import { HttpClientModule } from '@angular/common/http';
-import { FuncionarioService } from './services/funcionario.service';
+import { HomeComponent } from './widgets/home/home.component';
+import { ParceriasComponent } from './widgets/parcerias/parcerias.component';
+import { SobreComponent } from './widgets/sobre/sobre.component';
 
 
 const appRoutes: Routes = [
@@ -27,7 +29,10 @@ const appRoutes: Routes = [
   { path: 'listarFuncionarios', component: ListarFuncionarioComponent },
   { path: 'cadastroCardapio', component: CadastrarCardapioComponent },
   { path: 'editaCardapio', component: EditarCardapioComponent },
-  { path: 'listarCardapio', component: ListarCardapioComponent }
+  { path: 'listarCardapio', component: ListarCardapioComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'parcerias', component: ParceriasComponent },
+  { path: 'sobre', component: SobreComponent }
 ];
 
 @NgModule({
@@ -40,7 +45,10 @@ const appRoutes: Routes = [
     EditarFuncionarioComponent,
     CadastrarCardapioComponent,
     ListarCardapioComponent,
-    EditarCardapioComponent
+    EditarCardapioComponent,
+    HomeComponent,
+    ParceriasComponent,
+    SobreComponent
   ],
   imports: [
     RouterModule.forRoot(
