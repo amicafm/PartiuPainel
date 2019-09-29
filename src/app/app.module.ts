@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ChartsModule } from 'ng2-charts';
+import {NgxMaskModule, IConfig} from 'ngx-mask'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './widgets/home/home.component';
 import { ParceriasComponent } from './widgets/parcerias/parcerias.component';
 import { SobreComponent } from './widgets/sobre/sobre.component';
+import { RelatorioComponent } from './relatorio/relatorio.component';
 
 
 const appRoutes: Routes = [
@@ -32,8 +35,11 @@ const appRoutes: Routes = [
   { path: 'listarCardapio', component: ListarCardapioComponent },
   { path: 'home', component: HomeComponent },
   { path: 'parcerias', component: ParceriasComponent },
-  { path: 'sobre', component: SobreComponent }
+  { path: 'sobre', component: SobreComponent },
+  { path: 'relatorio', component: RelatorioComponent }
 ];
+
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 @NgModule({
   declarations: [
@@ -48,7 +54,8 @@ const appRoutes: Routes = [
     EditarCardapioComponent,
     HomeComponent,
     ParceriasComponent,
-    SobreComponent
+    SobreComponent,
+    RelatorioComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -59,7 +66,9 @@ const appRoutes: Routes = [
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartsModule,
+    NgxMaskModule.forRoot(options)
   ],
   providers: [LoginService],
   bootstrap: [AppComponent], 

@@ -20,12 +20,12 @@ export class EditarFuncionarioComponent implements OnInit {
     this.formGroup = this.formBuilder.group({
         nome: ['', Validators.required],
         cfp: ['', Validators.required],
-        usuario: ['', Validators.required],
         senha: ['', Validators.required],
         genero: ['', Validators.required],
         email: ['', Validators.required],
         telefone: ['', Validators.required],
-        nascimento: ['', Validators.required]
+        nascimento: ['', Validators.required],
+        categoria: ['', Validators.required]
     });
   }
 

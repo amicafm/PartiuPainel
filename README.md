@@ -4,5 +4,6 @@ Necessita NodeJs e Angular/cli versão 8
 NodeJs: https://nodejs.org/en/download/
 Angular: npm install -g @angular/cli
 Bootstrap: npm install ngx-bootstrap --save
-
+ChartsJS: npm install ng2-charts e npm install chart.js
+ngx-mask: npm install --save ngx-mask
 

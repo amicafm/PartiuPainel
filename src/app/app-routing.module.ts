@@ -11,6 +11,7 @@ import { ListarCardapioComponent } from './cardapio/listar/listar.cardapio.compo
 import { HomeComponent } from './widgets/home/home.component';
 import { ParceriasComponent } from './widgets/parcerias/parcerias.component';
 import { SobreComponent } from './widgets/sobre/sobre.component';
+import { RelatorioComponent } from './relatorio/relatorio.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,8 @@ const routes: Routes = [
   { path: 'listarcardapio', component: ListarCardapioComponent },
   { path: 'home', component: HomeComponent },
   { path: 'parcerias', component: ParceriasComponent },
-  { path: 'sobre', component: SobreComponent }
+  { path: 'sobre', component: SobreComponent },
+  { path: 'relatorio', component: RelatorioComponent }
 ];
 
 @NgModule({

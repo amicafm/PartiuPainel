@@ -18,9 +18,6 @@
                                         <input type="text" class="form-control" formControlName="cpf" [(ngModel)]="funcionario.cpf"placeholder="CPF" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" formControlName="usuario" [(ngModel)]="funcionario.usuario"placeholder="Usuário de login" value="" />
-                                    </div>
-                                    <div class="form-group">
                                         <input type="password" class="form-control"  formControlName="senha" [(ngModel)]="funcionario.senha" placeholder="Senha" value="" />
                                     </div>
                                     <div class="form-group">
@@ -41,13 +38,25 @@
                                         <input type="email" class="form-control" formControlName="email" [(ngModel)]="funcionario.email"placeholder="Email" value="" />
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" formControlName="telefone" [(ngModel)]="funcionario.telefone" placeholder="Telefone" value="" />
+                                        <input type="text" mask="(00) 0000-0000 || (00) 00000-0000" minlength="14" maxlength="15" name="txtEmpPhone" class="form-control" formControlName="telefone" [(ngModel)]="funcionario.telefone" placeholder="Telefone" value="" />
                                     </div>
                                     <div class="form-group">
                                         <div>
                                             Nascimento: <input type="date" name="bday" formControlName="nascimento" [(ngModel)]="funcionario.nascimento" [value]="funcionario.nascimento | date:'yyyy-MM-dd'">
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                            <div class="maxl">
+                                                <label class="radio inline"> 
+                                                    <input type="radio" name="gategoria" value="garçom" formControlName="categoria" checked >
+                                                    <span> Garçom </span> 
+                                                </label>
+                                                <label class="radio inline" style="margin-left: 10px;"> 
+                                                    <input type="radio" name="categoria" value="gerente" formControlName="categoria">
+                                                    <span> Gerente </span> 
+                                                </label>
+                                            </div>
+                                        </div>
                                     <div style="margin-top: 50px;">
                                         <button type="button" class="btnRegister" (click)="this.editarFuncionario(funcionario)">Editar </button>
                                     </div>

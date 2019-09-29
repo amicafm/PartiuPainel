@@ -26,9 +26,9 @@ export class CadastrarFuncionarioComponent implements OnInit {
       nascimento: ['', Validators.required],
       email: ['', Validators.required],
       telefone: ['', Validators.required],
-        usuario: ['', Validators.required],
-        genero: ['', Validators.required],
-        senha: ['', Validators.required]
+      genero: ['', Validators.required],
+      senha: ['', Validators.required],
+      categoria: ['', Validators.required]
     });
   }
 
@@ -43,6 +43,7 @@ export class CadastrarFuncionarioComponent implements OnInit {
       let telefone = telUnformated.substring(2);
       let genero = this.formGroup.get("genero").value;
       let senha = "123";
+      let categoria = this.formGroup.get("categoria").value;
       // let usuario = this.formGroup.get("cpf").value;
       
       this.funcService.createFuncionario(tipo, cpf, nome, nasc, email, ddd, telefone, genero, senha).subscribe((data)=>{
