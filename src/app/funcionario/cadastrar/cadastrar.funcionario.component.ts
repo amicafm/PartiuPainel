@@ -33,7 +33,6 @@ export class CadastrarFuncionarioComponent implements OnInit {
   }
 
   adicionarFuncionario(){
-      let tipo = "garcom"
       let cpf = this.formGroup.get("cpf").value;
       let nome = this.formGroup.get("nome").value;
       let nasc = this.formGroup.get("nascimento").value;
@@ -41,11 +40,11 @@ export class CadastrarFuncionarioComponent implements OnInit {
       let telUnformated = this.formGroup.get("telefone").value;
       let ddd = telUnformated.substring(0, 2);
       let telefone = telUnformated.substring(2);
-      let genero = this.formGroup.get("genero").value;
+      let genero = this.formGroup.get("generoconstructor(private http: HttpClient) { }").value;
       let senha = "123";
-      let categoria = this.formGroup.get("categoria").value;
+      let tipo = this.formGroup.get("tipo").value;
       // let usuario = this.formGroup.get("cpf").value;
-      
+
       this.funcService.createFuncionario(tipo, cpf, nome, nasc, email, ddd, telefone, genero, senha).subscribe((data)=>{
           console.log("Funcionário Criado")
           this.router.navigate(['/listarfuncionario/']);

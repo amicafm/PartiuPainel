@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     let email = this.formGroup.get("email").value;
     let senha = this.formGroup.get("senha").value;
     this.loginService.login(email, senha).subscribe((data: Usuario)=>{
-      if (data["id"]){
+      if (data["id"] && data["tipo"]=="gerente"){
 
         // if(data["tipo"] == "gerente"){}
         this.usuario =  data
@@ -45,14 +45,13 @@ export class LoginComponent implements OnInit {
           console.log("TESTES"+restaurante)
           localStorage.setItem('restaurante', JSON.stringify(restaurante))
           localStorage.setItem('usuario', JSON.stringify(this.usuario));
+          console.log("Usuario logado; email = "+data["email"])
+          this.router.navigate(['/mediador/']);
         })
         
-        
-        console.log("Usuario logado; email = "+data["email"])
-        this.router.navigate(['/mediador/']);
-
       }else{
         console.log("Usuario Invalido")
+        if(data["tipo"]=="cliente" || data["tipo"]=="garcom") console.log("Não é gerente")
       }
     })
   }
