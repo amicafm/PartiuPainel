@@ -8,7 +8,7 @@ import { CardapioService } from 'src/app/services/cardapio.service';
   styleUrls: ['./listar.cardapio.component.css']
 })
 export class ListarCardapioComponent implements OnInit {
-  public listarItens: Item[];
+  public listarItens;
 
   constructor(private cardapioService: CardapioService) { }
 
