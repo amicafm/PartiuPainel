@@ -8,13 +8,13 @@ import { CardapioService } from 'src/app/services/cardapio.service';
   styleUrls: ['./listar.cardapio.component.css']
 })
 export class ListarCardapioComponent implements OnInit {
-  public listarItens;
+  public listarItens: Item[];
 
   constructor(private cardapioService: CardapioService) { }
 
   ngOnInit() {
     this.cardapioService.listarItens().subscribe(itens => {
-      this.listarItens = itens;
+      this.listarItens = itens as Item[];
       console.log(itens);
     });
   }

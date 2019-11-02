@@ -20,6 +20,7 @@ import { HomeComponent } from './widgets/home/home.component';
 import { ParceriasComponent } from './widgets/parcerias/parcerias.component';
 import { SobreComponent } from './widgets/sobre/sobre.component';
 import { RelatorioComponent } from './relatorio/relatorio.component';
+import { MineracaoComponent } from './mineracao/mineracao.component';
 
 
 const appRoutes: Routes = [
@@ -55,7 +56,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     HomeComponent,
     ParceriasComponent,
     SobreComponent,
-    RelatorioComponent
+    RelatorioComponent,
+    MineracaoComponent
   ],
   imports: [
     RouterModule.forRoot(

@@ -12,6 +12,7 @@ import { HomeComponent } from './widgets/home/home.component';
 import { ParceriasComponent } from './widgets/parcerias/parcerias.component';
 import { SobreComponent } from './widgets/sobre/sobre.component';
 import { RelatorioComponent } from './relatorio/relatorio.component';
+import { MineracaoComponent } from './mineracao/mineracao.component';
 
 
 const routes: Routes = [
@@ -27,7 +28,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'parcerias', component: ParceriasComponent },
   { path: 'sobre', component: SobreComponent },
-  { path: 'relatorio', component: RelatorioComponent }
+  { path: 'relatorio', component: RelatorioComponent },
+  { path: 'mineracao', component: MineracaoComponent }
 ];
 
 @NgModule({
