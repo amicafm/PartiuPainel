@@ -5,3 +5,16 @@
 	background-color:#3f444b;
 	width:100%;
 }
+
+h6, h3 {
+	color: white;
+}
+
+.porcentagem {
+	height: 75px;
+	color: white;
+}
+
+.estrelas {
+	width: 90px;
+}

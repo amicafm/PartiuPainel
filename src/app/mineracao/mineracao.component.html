@@ -1,34 +1,136 @@
 <div id="suadiv">
-    <div class="row">
-      <div class="col">
-        estrelas estabelecimento
-      </div>
-      <div class="col">
-        estrelas funcionarios
-      </div>
-    </div>
-
-<div class="row">
-    <div class="col-9">   
+    <div class="container">
+        <!-- linha de avaliaçõpes em estrelas -->
+        <div class="row">
+            <!-- coluna de avaliação geral estabelecimento -->
+            <div class="col mt-3" [ngSwitch]="avaliacao.estrelasGeralEstabelecimento">
+                <h6>Classificação do seu estabelecimento:</h6>
+                <!-- carrega caso seja 5 estrelas -->
+                <a *ngSwitchCase="5">
+                    <img src="../../assets/img/estrelas/5estrelas.png">
+                </a>
+                <!-- carrega caso seja 4 estrelas -->
+                <a *ngSwitchCase="4">
+                    <img src="../../assets/img/estrelas/4estrelas.png">
+                </a>
+                <!-- carrega caso seja 3 estrelas -->
+                <a *ngSwitchCase="3">
+                    <img src="../../assets/img/estrelas/3estrelas.png">
+                </a>
+                <!-- carrega caso seja 2 estrelas -->
+                <a *ngSwitchCase="2">
+                    <img src="../../assets/img/estrelas/2estrelas.png">
+                </a>
+                <!-- carrega caso seja 1 estrela -->
+                <a *ngSwitchCase="1">
+                    <img src="../../assets/img/estrelas/1estrela.png">
+                </a>
+                <!-- carrega caso seja 0 estrelas -->
+                <a *ngSwitchCase="0">
+                    <img src="../../assets/img/estrelas/vazias.png">
+                </a>
+            </div>
+            <!-- coluna de avaliação geral funcionarios -->
+            <div class="col mt-3" [ngSwitch]="avaliacao.estrelasGeralFuncionarios">
+                    <h6>Classificação dos seus funcionarios:</h6>
+                    <!-- carrega caso seja 5 estrelas -->
+                    <a *ngSwitchCase="5">
+                        <img src="../../assets/img/estrelas/5estrelas.png">
+                    </a>
+                    <!-- carrega caso seja 4 estrelas -->
+                    <a *ngSwitchCase="4">
+                        <img src="../../assets/img/estrelas/4estrelas.png">
+                    </a>
+                    <!-- carrega caso seja 3 estrelas -->
+                    <a *ngSwitchCase="3">
+                        <img src="../../assets/img/estrelas/3estrelas.png">
+                    </a>
+                    <!-- carrega caso seja 2 estrelas -->
+                    <a *ngSwitchCase="2">
+                        <img src="../../assets/img/estrelas/2estrelas.png">
+                    </a>
+                    <!-- carrega caso seja 1 estrela -->
+                    <a *ngSwitchCase="1">
+                        <img src="../../assets/img/estrelas/1estrela.png">
+                    </a>
+                    <!-- carrega caso seja 0 estrelas -->
+                    <a *ngSwitchCase="0">
+                        <img src="../../assets/img/estrelas/vazias.png">
+                    </a>
+            </div>
+        </div>
+        <!-- linha de emoções e tabela de comentarios -->
+        <div class="row mt-5">
+        <div class="col-3">
+                <h6>Humor dos seus clientes:</h6>
+                <div class="row">
+                <div class="col">
+                <img src="../../assets/img/emocoes.png">
+            </div>
+            
+            <div class="col">
+                    <table>
+                        <tr>
+                            <th class="porcentagem">{{avaliacao.humorMuitoFeliz}}</th>
+                        </tr>
+                        <tr>
+                            <th class="porcentagem">{{avaliacao.humorFeliz}}</th>
+                        </tr>
+                        <tr>
+                            <th class="porcentagem">{{avaliacao.humorNeutro}}</th>
+                        </tr>
+                        <tr>
+                            <th class="porcentagem">{{avaliacao.humorTriste}}</th>
+                        </tr>   
+                    </table>
+                </div>
+            </div>
+            </div>
+    <div class="col-8">   
+            <h3>Ultimos comentários:</h3>
 <table class="table table-dark">
     <thead>
         <tr>
-            <th scope="col">Nota</th>
+            <th scope="col">Estrelas</th>
             <th scope="col">Sentimento</th>
             <th scope="col">Comentário</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th>bla</th>
-            <td>bla</td>
-            <td>bla</td>
+        <tr [ngSwitch]="avaliacao.estrelasEspecifica">
+            <th>
+                <!-- carrega caso seja 5 estrelas -->
+                <a *ngSwitchCase="5">
+                    <img src="../../assets/img/estrelas/5estrelas.png">
+                </a>
+                <!-- carrega caso seja 4 estrelas -->
+                <a *ngSwitchCase="4">
+                    <img src="../../assets/img/estrelas/4estrelas.png">
+                </a>
+                <!-- carrega caso seja 3 estrelas -->
+                <a *ngSwitchCase="3">
+                    <img src="../../assets/img/estrelas/3estrelas.png">
+                </a>
+                <!-- carrega caso seja 2 estrelas -->
+                <a *ngSwitchCase="2">
+                    <img src="../../assets/img/estrelas/2estrelas.png">
+                </a>
+                <!-- carrega caso seja 1 estrela -->
+                <a *ngSwitchCase="1">
+                    <img src="../../assets/img/estrelas/1estrela.png">
+                </a>
+                <!-- carrega caso seja 0 estrelas -->
+                <a *ngSwitchCase="0">
+                    <img src="../../assets/img/estrelas/vazias.png">
+                </a>
+            </th>
+            <td>{{avalicao.humorComentario}}</td>
+            <td>{{avalicao.comentario}}</td>
         </tr>
     </tbody>
 </table>
 </div>
-<div class="col-3">
-    emoções
 </div>
 </div>
+
 </div>
