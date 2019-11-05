@@ -3,7 +3,7 @@
         <!-- linha de avaliaçõpes em estrelas -->
         <div class="row">
             <!-- coluna de avaliação geral estabelecimento -->
-            <div class="col mt-3" [ngSwitch]="avaliacao.estrelasGeralEstabelecimento">
+            <div class="col mt-3" [ngSwitch]="mediaEstabelecimento">
                 <h6>Classificação do seu estabelecimento:</h6>
                 <!-- carrega caso seja 5 estrelas -->
                 <a *ngSwitchCase="5">
@@ -31,7 +31,7 @@
                 </a>
             </div>
             <!-- coluna de avaliação geral funcionarios -->
-            <div class="col mt-3" [ngSwitch]="avaliacao.estrelasGeralFuncionarios">
+            <div class="col mt-3" [ngSwitch]="mediaFuncionarios">
                     <h6>Classificação dos seus funcionarios:</h6>
                     <!-- carrega caso seja 5 estrelas -->
                     <a *ngSwitchCase="5">
@@ -71,16 +71,16 @@
             <div class="col">
                     <table>
                         <tr>
-                            <th class="porcentagem">{{avaliacao.humorMuitoFeliz}}</th>
+                            <th class="porcentagem">{{emocao3}}</th>
                         </tr>
                         <tr>
-                            <th class="porcentagem">{{avaliacao.humorFeliz}}</th>
+                            <th class="porcentagem">{{emocao2}}</th>
                         </tr>
                         <tr>
-                            <th class="porcentagem">{{avaliacao.humorNeutro}}</th>
+                            <th class="porcentagem">{{emocao1}}</th>
                         </tr>
                         <tr>
-                            <th class="porcentagem">{{avaliacao.humorTriste}}</th>
+                            <th class="porcentagem">{{emocao0}}</th>
                         </tr>   
                     </table>
                 </div>
@@ -96,9 +96,10 @@
             <th scope="col">Comentário</th>
         </tr>
     </thead>
-    <tbody>
-        <tr [ngSwitch]="avaliacao.estrelasEspecifica">
-            <th>
+    <tbody *ngFor="let avaliacao of listaAvaliacoes">     
+
+        <tr [ngSwitch]="avaliacao.avEstabelecimento">
+            <td>
                 <!-- carrega caso seja 5 estrelas -->
                 <a *ngSwitchCase="5">
                     <img src="../../assets/img/estrelas/5estrelas.png" class="estrelas">
@@ -123,9 +124,9 @@
                 <a *ngSwitchCase="0">
                     <img src="../../assets/img/estrelas/vazias.png" class="estrelas">
                 </a>
-            </th>
-            <td>{{avalicao.humorComentario}}</td>
-            <td>{{avalicao.comentario}}</td>
+            </td>
+            <td>{{avaliacao.bayesEstabelecimento}}</td>
+            <td>{{avaliacao.descEstabelecimento}}</td>
         </tr>
     </tbody>
 </table>

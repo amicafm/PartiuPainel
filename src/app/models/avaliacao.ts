@@ -1,11 +1,13 @@
-export class Avaliacao {
-    public estrelasGeralEstabelecimento: number;
-    public estrelasGeralFuncionarios: number;
-    public humorMuitoFeliz: number;
-    public humorFeliz: number;
-    public humorNeutro: number;
-    public humorTriste: number;
-    public estrelasEspecifica: number;
-    public humorComentario: string;
-    public comentario: string;
-  }
+export class Avaliacao{
+
+    public id: number;
+    public idCliente: String;
+    public cliente: String;
+    public idComanda: String;
+    public avEstabelecimento: number;
+    public avFuncionario: number;
+    public descEstabelecimento: String;
+    public descFuncionario: String;
+    public bayesEstabelecimento;
+    public bayesFuncionario;
+}
