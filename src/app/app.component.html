@@ -33,7 +33,15 @@
 
     <ul class="nav navbar-nav ml-auto">
       <li class="nav-item">
-        <a (click)="this.logOut()" class="nav-link" style="cursor: pointer;"><span class="fas fa-sign-in-alt"></span> Login</a>
+        
+          <ng-template [ngIf]="!loggedIn">
+            <a id="linkLogInOut"  (click)="this.logInOut()" class="nav-link" style="cursor: pointer;"><span class="fas fa-sign-in-alt"></span> Login</a>
+          </ng-template>
+
+
+        <ng-template [ngIf]="loggedIn">
+          <a id="linkLogInOut"  (click)="this.logInOut()" class="nav-link" style="cursor: pointer;"><span class="fas fa-sign-out-alt"></span> Logout</a>
+        </ng-template>
       </li>
     </ul>
   </div>

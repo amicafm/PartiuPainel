@@ -25,8 +25,11 @@
                     <td>{{funcionario.telefone}}</td>
                     <td>
                         <button type="button" class="btn btn-primary" routerLink="/editarfuncionario">Editar</button>
-                        <button type="button" class="btn btn-danger" (click)="excluirFuncionario(funcionario.id)">Deletar</button>
-                    </td>
+                        <!-- <button *ngIf="funcionario.status='A'" type="button" class="btn btn-danger" (click)="updateStatusFuncionario(funcionario.id,'I')">Desativar</button>
+                        <button *ngIf="funcionario.status='I'" type="button" class="btn btn-danger" (click)="updateStatusFuncionario(funcionario.id,'A')">Ativar</button>
+                     -->
+                        <button  type="button" class="btn btn-danger" (click)="updateStatusFuncionario(funcionario.id,'A')">Ativar</button>
+                </td>
                 </tr>
             </tbody>
         </table>

@@ -1,6 +1,6 @@
 export class Restaurante{
 
-    public cnpj: number;
+    public cnpj: string;
     public avaliacao: number;
     public dia: number;
     public qtdMesas: number;

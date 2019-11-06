@@ -21,7 +21,6 @@ export class MineracaoComponent implements OnInit {
 
   ngOnInit() {  
 
-console.log("TESTESSS "+""+JSON.parse(localStorage.getItem('restaurante'))["cnpj"])
     this.mineracaoService.getAvaliacoes(""+JSON.parse(localStorage.getItem('restaurante'))["cnpj"]).subscribe(data => {
 
     // this.mineracaoService.getAvaliacoes("02704394000356").subscribe(data => {

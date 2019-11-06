@@ -8,4 +8,5 @@ export class Funcionario {
     public senha: string;
     public nascimento: Date;
     public genero: string;
+    public status: string;
   }

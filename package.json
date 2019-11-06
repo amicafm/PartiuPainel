@@ -30,6 +30,7 @@
     "jquery-mask-plugin": "^1.14.16",
     "ng2-charts": "^2.3.0",
     "ngx-bootstrap": "^5.1.1",
+    "ngx-currency": "^2.0.0",
     "ngx-mask": "^8.0.6",
     "ngx-phone-mask": "^3.3.0",
     "rxjs": "~6.4.0",

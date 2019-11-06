@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
           console.log("TESTES"+restaurante)
           localStorage.setItem('restaurante', JSON.stringify(restaurante))
           localStorage.setItem('usuario', JSON.stringify(this.usuario));
+          document.getElementById("linkLogInOut").innerHTML='<span class="fas fa-sign-out-alt"></span> Logout'
           console.log("Usuario logado; email = "+data["email"])
           this.router.navigate(['/mediador/']);
         })

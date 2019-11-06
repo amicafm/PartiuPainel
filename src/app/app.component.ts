@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ export class AppComponent implements OnInit{
   title = 'Painel Partiu';
   loggedIn: boolean;
 
-  constructor(private router: Router){
+  constructor(private router: Router,@Inject(DOCUMENT) document){
    
   };
 
@@ -27,18 +28,19 @@ export class AppComponent implements OnInit{
       
     }else{
       // TODO set texto e icone para logout
-      this.loggedIn = true
+      this.loggedIn = true;
       console.log("User is logged in")
     }
   }
 
-  logOut(){
-    console.log("tentativa logOut")
+  logInOut(){
     if (localStorage.getItem('usuario') != null){
-      console.log("deu logOut")
       localStorage.clear();
-      this.router.navigate(['/login/']);
-    }
+     document.getElementById("linkLogInOut").innerHTML='<span class="fas fa-sign-in-alt"></span> Login'
+    }else{
+    document.getElementById("linkLogInOut").innerHTML='<span class="fas fa-sign-out-alt"></span> Logout'
+  }
+    this.router.navigate(['/login/']);
   }
 
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Funcionario } from 'src/app/models/funcionario';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editar-funcionario',
@@ -9,11 +10,18 @@ import { Funcionario } from 'src/app/models/funcionario';
 })
 export class EditarFuncionarioComponent implements OnInit {
   public formGroup: FormGroup;
+  public idItem:number;
 
-  constructor(private formBuilder: FormBuilder) { }
 
+
+  constructor(private formBuilder: FormBuilder, private router: Router) { }
+
+  public idFuncionario:number
   ngOnInit() {
     this.criarFormulario();
+
+    console.log(this.idFuncionario)
+
   }
 
   criarFormulario(){

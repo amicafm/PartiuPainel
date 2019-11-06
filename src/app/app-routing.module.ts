@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'listarfuncionario', component: ListarFuncionarioComponent },
   { path: 'editarfuncionario', component: EditarFuncionarioComponent },
   { path: 'cadastrarcardapio', component: CadastrarCardapioComponent },
-  { path: 'editarcardapio', component: EditarCardapioComponent },
+  { path: 'editarcardapio/:id', component: EditarCardapioComponent },
   { path: 'listarcardapio', component: ListarCardapioComponent },
   { path: 'home', component: HomeComponent },
   { path: 'parcerias', component: ParceriasComponent },

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Item } from 'src/app/models/item';
 import { CardapioService } from 'src/app/services/cardapio.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-listar-cardapio',
@@ -9,8 +10,9 @@ import { CardapioService } from 'src/app/services/cardapio.service';
 })
 export class ListarCardapioComponent implements OnInit {
   public listarItens: Item[];
+  public idEditItem:number = 0;
 
-  constructor(private cardapioService: CardapioService) { }
+  constructor(private cardapioService: CardapioService, private router: Router) { }
 
   ngOnInit() {
     this.cardapioService.listarItens().subscribe(itens => {
@@ -19,8 +21,11 @@ export class ListarCardapioComponent implements OnInit {
     });
   }
 
-  excluirItem(id: number){
-    //this.cardapioService.deletarItemById(id);
+  updateStatusItem(id: number, status:string){
+    this.cardapioService.updateStatusItem(id,status).subscribe(itens => {
+      this.listarItens = itens as Item[];
+      console.log(itens);
+    });
   }
 
 }

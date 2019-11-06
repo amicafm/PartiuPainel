@@ -21,6 +21,7 @@ import { ParceriasComponent } from './widgets/parcerias/parcerias.component';
 import { SobreComponent } from './widgets/sobre/sobre.component';
 import { RelatorioComponent } from './relatorio/relatorio.component';
 import { MineracaoComponent } from './mineracao/mineracao.component';
+import { NgxCurrencyModule } from "ngx-currency";
 
 
 const appRoutes: Routes = [
@@ -70,7 +71,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     ReactiveFormsModule,
     HttpClientModule,
     ChartsModule,
-    NgxMaskModule.forRoot(options)
+    NgxMaskModule.forRoot(options),
+    NgxCurrencyModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent], 
