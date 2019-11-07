@@ -14,53 +14,50 @@
                             <div class="row register-form">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" formControlName="nome" placeholder="Nome" value="" required/>
+                                        <label for="nome">Nome</label>
+                                        <input id="nome" type="text" class="form-control" formControlName="nome" placeholder="Nome" value="" required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" formControlName="cpf" placeholder="CPF" value="" required/>
+                                        <label for="cpf">CPF</label>
+                                        <input id="cpf" type="text" class="form-control" formControlName="cpf" placeholder="CPF" value=""  required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control"  formControlName="senha" placeholder="Senha" value="" required/>
+                                        <label for="senha">Senha</label>
+                                        <input id="senha" type="password" class="form-control"  formControlName="senha" placeholder="Senha" value="" required/>
                                     </div>
                                     <div class="form-group">
-                                        <div class="maxl">
-                                            <label class="radio inline"> 
-                                                <input type="radio" name="genero" value="M" formControlName="genero" checked >
-                                                <span> Homem </span> 
-                                            </label>
-                                            <label class="radio inline" style="margin-left: 10px;"> 
-                                                <input type="radio" name="genero" value="F" formControlName="genero">
-                                                <span> Mulher </span> 
-                                            </label>
-                                        </div>
+                                        <label for="genero">Gênero</label>
+                                        <select class="form-control" name="genero" id="genero" formControlName="genero"  [(ngModel)]="defaultSexo">
+                                            <option value="M">Masculino</option>
+                                            <option value="F">Feminino</option>
+                                            <option value="O">Outro</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" formControlName="email" placeholder="Email" value="" required/>
+                                        <label for="email">Email</label>
+                                        <input id="email" type="email" class="form-control" formControlName="email" placeholder="Email" value=""  required/>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" mask="(00) 0000-0000 || (00) 00000-0000" minlength="14" maxlength="15" class="form-control" formControlName="telefone" placeholder="Telefone" required/>
-                                    </div>
+                                        <label for="tel">Telefone</label>
+                                        <input id="tel" type="text" mask="(00) 000000000" class="form-control" formControlName="telefone" placeholder="Telefone" required/>
+                                    </div> <!--  mask="(00) 0000-0000 || (00) 00000-0000"  -->
                                     <div class="form-group">
                                         <div>
-                                            Nascimento: <input type="date" name="nascimento" formControlName="nascimento" required>
+                                            <label for="nasc">Nascimento</label>
+                                            <input id="nasc" class="form-control" mask="00/00/0000" type="dta_nascimento" name="nascimento" formControlName="nascimento" placeholder="00/00/0000" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                            <div class="maxl">
-                                                <label class="radio inline"> 
-                                                    <input type="radio" name="tipo" value="garcom" formControlName="tipo" checked >
-                                                    <span> Garçom </span> 
-                                                </label>
-                                                <label class="radio inline" style="margin-left: 10px;"> 
-                                                    <input type="radio" name="tipo" value="gerente" formControlName="tipo">
-                                                    <span> Gerente </span> 
-                                                </label>
-                                            </div>
+                                            <label for="tipo">Cargo</label>
+                                            <select class="form-control" name="tipo" id="tipo" formControlName="tipo" [(ngModel)]="defaultCargo" >
+                                                <option selected value="garcom">Garçom</option>
+                                                <option value="gerente">Gerente</option>
+                                            </select>
                                         </div>
                                     <div style="margin-top: 50px;">
-                                        <button type="button" class="btnRegister" (click)="this.adicionarFuncionario()">Cadastrar </button>
+                                        <button type="button" class="btnRegister" (click)="this.adicionarFuncionario()">Confirmar</button>
                                     </div>
                                 </div>
                             </div>

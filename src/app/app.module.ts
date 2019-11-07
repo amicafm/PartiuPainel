@@ -22,6 +22,7 @@ import { SobreComponent } from './widgets/sobre/sobre.component';
 import { RelatorioComponent } from './relatorio/relatorio.component';
 import { MineracaoComponent } from './mineracao/mineracao.component';
 import { NgxCurrencyModule } from "ngx-currency";
+import { RatingModule } from 'ng-starrating';
 
 
 const appRoutes: Routes = [
@@ -72,7 +73,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     HttpClientModule,
     ChartsModule,
     NgxMaskModule.forRoot(options),
-    NgxCurrencyModule
+    NgxCurrencyModule,
+    RatingModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent], 

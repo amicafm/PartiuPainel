@@ -11,4 +11,5 @@ export class Funcionario {
     public nascimento: Date;
     public genero: string;
     public status: string;
+    public tipo: string;
   }

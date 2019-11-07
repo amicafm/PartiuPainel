@@ -14,7 +14,7 @@ export class FuncionarioService {
   }
 
   createFuncionario(tipo:string, cpf:string, nome:string, nasc:string, email: string, ddd:string, telefone:string, genero:string, senha: string){
-    return this.http.get(FuncionarioService.url+"createFuncionario?tipo="+tipo+"&cpf="+cpf+"&nome="+nome+"&dta_nascimento="+nasc+"&email="+email+"&ddd="+ddd+"&telefone="+telefone+"&genero="+genero+"&senha="+senha+"&cnpj="+this.cnpj);
+    return this.http.get(FuncionarioService.url+"createUsuario?tipo="+tipo+"&cpf="+cpf+"&nome="+nome+"&dta_nascimento="+nasc+"&email="+email+"&ddd="+ddd+"&telefone="+telefone+"&genero="+genero+"&senha="+senha+"&cnpj="+this.cnpj);
   }
 
   editFuncionario(id:string, tipo:string, cpf:string, nome:string, nasc:string, email: string, ddd:string, telefone:string, genero:string, senha: string){

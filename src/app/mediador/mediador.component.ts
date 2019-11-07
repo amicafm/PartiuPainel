@@ -14,8 +14,8 @@ export class MediadorComponent implements OnInit {
   private restaurante: Restaurante
 
   constructor(private router: Router) { 
-    this.usuario = JSON.parse(localStorage.getItem('usuario'));
     this.restaurante = JSON.parse(localStorage.getItem('restaurante'));
+    this.usuario = JSON.parse(localStorage.getItem('usuario'));
     if(!this.usuario){
       console.log("Não logado")
       this.router.navigate(['/login/']);

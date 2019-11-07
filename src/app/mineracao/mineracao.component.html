@@ -6,6 +6,9 @@
             <div class="col mt-3" [ngSwitch]="mediaEstabelecimento">
                 <h6>Classificação do seu estabelecimento:</h6>
                 <!-- carrega caso seja 5 estrelas -->
+                <!-- <star-rating value={{mediaEstabelecimento}} checkedcolor="white" uncheckedcolor="#0f0f0f" size="45px"    readonly="true"></star-rating> -->
+        
+
                 <a *ngSwitchCase="5">
                     <img src="../../assets/img/estrelas/5estrelas.png">
                 </a>
