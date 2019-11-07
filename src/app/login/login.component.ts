@@ -36,13 +36,13 @@ export class LoginComponent implements OnInit {
     let email = this.formGroup.get("email").value;
     let senha = this.formGroup.get("senha").value;
     this.loginService.login(email, senha).subscribe((data: Usuario)=>{
+      console.log(data["status"])
       if (data["id"] && data["tipo"]=="gerente"){
 
         // if(data["tipo"] == "gerente"){}
         this.usuario =  data
 
         this.loginService.getCnpj(data.id).subscribe((restaurante) =>{
-          console.log("TESTES"+restaurante)
           localStorage.setItem('restaurante', JSON.stringify(restaurante))
           localStorage.setItem('usuario', JSON.stringify(this.usuario));
           document.getElementById("linkLogInOut").innerHTML='<span class="fas fa-sign-out-alt"></span> Logout'

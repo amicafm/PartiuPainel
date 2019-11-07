@@ -10,62 +10,59 @@
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             <h3 class="register-heading"><a routerLink="/listarfuncionario"><img src="../../../assets/img/seta.png" style="height: 60px; width: 60px; margin-right: 20px;"></a>Edite as informações do seu funcionário :)</h3>
                             <div class="row register-form">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" formControlName="nome" [(ngModel)]="funcionario.nome" placeholder="Nome" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" formControlName="cpf" [(ngModel)]="funcionario.cpf"placeholder="CPF" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" class="form-control"  formControlName="senha" [(ngModel)]="funcionario.senha" placeholder="Senha" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="maxl">
-                                            <label class="radio inline"> 
-                                                <input type="radio" name="gender" value="homem" formControlName="genero" [(ngModel)]="funcionario.genero" checked>
-                                                <span> Homem </span> 
-                                            </label>
-                                            <label class="radio inline" style="margin-left: 10px;"> 
-                                                <input type="radio" name="gender" value="mulher" formControlName="genero" [(ngModel)]="funcionario.genero">
-                                                <span> Mulher </span> 
-                                            </label>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="nome">Nome</label>
+                                            <input id="nome" type="text" class="form-control" formControlName="nome" placeholder="Nome" value="" [(ngModel)]="funcionario.nome" required/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="cpf">CPF</label>
+                                            <input id="cpf" type="text" class="form-control" formControlName="cpf" placeholder="CPF" value="" [(ngModel)]="funcionario.cpf" required/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="senha">Senha</label>
+                                            <input id="senha" type="password" class="form-control"  formControlName="senha" placeholder="Senha" value="" [(ngModel)]="funcionario.senha" required/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="genero">Gênero</label>
+                                            <select class="form-control" name="genero" id="genero" formControlName="genero" [(ngModel)]="funcionario.genero">
+                                                <option value="M">Masculino</option>
+                                                <option value="F">Feminino</option>
+                                            </select>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" formControlName="email" [(ngModel)]="funcionario.email"placeholder="Email" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="text" mask="(00) 0000-0000 || (00) 00000-0000" minlength="14" maxlength="15" name="txtEmpPhone" class="form-control" formControlName="telefone" [(ngModel)]="funcionario.telefone" placeholder="Telefone" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                        <div>
-                                            Nascimento: <input type="date" name="bday" formControlName="nascimento" [(ngModel)]="funcionario.nascimento" [value]="funcionario.nascimento | date:'yyyy-MM-dd'">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="email">Email</label>
+                                            <input id="email" type="email" class="form-control" formControlName="email" placeholder="Email" value="" [(ngModel)]="funcionario.email" required/>
                                         </div>
-                                    </div>
-                                    <div class="form-group">
-                                            <div class="maxl">
-                                                <label class="radio inline"> 
-                                                    <input type="radio" name="gategoria" value="garçom" formControlName="categoria" checked >
-                                                    <span> Garçom </span> 
-                                                </label>
-                                                <label class="radio inline" style="margin-left: 10px;"> 
-                                                    <input type="radio" name="categoria" value="gerente" formControlName="categoria">
-                                                    <span> Gerente </span> 
-                                                </label>
+                                        <div class="form-group">
+                                            <label for="tel">Telefone</label>
+                                            <input id="tel" type="text" mask="(00) 0000-0000 || (00) 00000-0000" minlength="14" maxlength="15" class="form-control" formControlName="telefone" placeholder="Telefone" [(ngModel)]="funcionario.telcompleto"required/>
+                                        </div> <!--  mask="(00) 0000-0000 || (00) 00000-0000"  -->
+                                        <div class="form-group">
+                                            <div>
+                                                <label for="nasc">Nascimento</label>
+                                                <input id="nasc" class="form-control" mask="00/00/0000" type="dta_nascimento" name="nascimento" formControlName="nascimento" [(ngModel)]="funcionario.dta_nascimento" required>
                                             </div>
                                         </div>
-                                    <div style="margin-top: 50px;">
-                                        <button type="button" class="btnRegister" (click)="this.editarFuncionario(funcionario)">Editar </button>
+                                        <div class="form-group">
+                                                <label for="tipo">Cargo</label>
+                                                <select class="form-control" name="tipo" id="tipo" formControlName="tipo" [(ngModel)]="funcionario.tipo">
+                                                    <option value="gerente">Gerente</option>
+                                                    <option value="garcom">Garçom</option>
+                                                </select>
+                                            </div>
+                                        <div style="margin-top: 50px;">
+                                            <button type="button" class="btnRegister" (click)="this.editFunc()">Confirmar</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
+    

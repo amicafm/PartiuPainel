@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'mediador', component: MediadorComponent },
   { path: 'cadastrarfuncionario', component: CadastrarFuncionarioComponent },
   { path: 'listarfuncionario', component: ListarFuncionarioComponent },
-  { path: 'editarfuncionario', component: EditarFuncionarioComponent },
+  { path: 'editarfuncionario/:id', component: EditarFuncionarioComponent },
   { path: 'cadastrarcardapio', component: CadastrarCardapioComponent },
   { path: 'editarcardapio/:id', component: EditarCardapioComponent },
   { path: 'listarcardapio', component: ListarCardapioComponent },

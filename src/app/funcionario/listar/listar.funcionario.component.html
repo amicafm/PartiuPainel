@@ -9,7 +9,7 @@
                 <tr>
                     <th scope="col">Nome</th>
                     <th scope="col">CPF</th>
-                    <th scope="col">Usuário</th>
+                    <!-- <th scope="col">Usuário</th> -->
                     <th scope="col">Email</th>
                     <th scope="col">Telefone</th>
                     <th scope="col" id="add">
@@ -20,16 +20,22 @@
                 <tr>
                     <th scope="row">{{funcionario.nome}}</th>
                     <td>{{funcionario.cpf}}</td>
-                    <td>{{funcionario.usuario}}</td>
+                    <!-- <td>{{funcionario.usuario}}</td> -->
                     <td>{{funcionario.email}}</td>
                     <td>{{funcionario.telefone}}</td>
                     <td>
-                        <button type="button" class="btn btn-primary" routerLink="/editarfuncionario">Editar</button>
-                        <!-- <button *ngIf="funcionario.status='A'" type="button" class="btn btn-danger" (click)="updateStatusFuncionario(funcionario.id,'I')">Desativar</button>
-                        <button *ngIf="funcionario.status='I'" type="button" class="btn btn-danger" (click)="updateStatusFuncionario(funcionario.id,'A')">Ativar</button>
-                     -->
-                        <button  type="button" class="btn btn-danger" (click)="updateStatusFuncionario(funcionario.id,'A')">Ativar</button>
-                </td>
+
+                            <ng-template [ngIf]="funcionario.id != idFuncLogado">
+                        <button type="button" class="btn btn-primary" [routerLink]="[ '/editarfuncionario',funcionario.id]">Editar</button>
+                        <ng-template [ngIf]="funcionario.status == 'I'">
+                                <button type="button" class="btn btn-danger" (click)="updateStatusFuncionario(funcionario.id, 'A')">Ativar</button>
+                        </ng-template>
+                        <ng-template [ngIf]="funcionario.status == 'A'">
+                            <button type="button" class="btn btn-danger" (click)="updateStatusFuncionario(funcionario.id, 'I')">Desativar</button>
+                        </ng-template>
+                        </ng-template>
+                
+                    </td>
                 </tr>
             </tbody>
         </table>

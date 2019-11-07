@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Funcionario } from 'src/app/models/funcionario';
 import { FuncionarioService } from 'src/app/services/funcionario.service';
 import { Router } from '@angular/router';
@@ -9,21 +9,18 @@ import { EditarFuncionarioComponent } from '../editar/editar.funcionario.compone
   templateUrl: './listar.funcionario.component.html',
   styleUrls: ['./listar.funcionario.component.css']
 })
-export class ListarFuncionarioComponent implements OnInit, AfterViewInit {
+export class ListarFuncionarioComponent implements OnInit{
   public listarFuncionarios: Funcionario[];
-  public idEditFuncionario:number = 0;
-  @ViewChild(EditarFuncionarioComponent, {static: false}) child;
+  public idFuncLogado: number;
+
 
   constructor(private funcService: FuncionarioService,private router:Router) { }
 
   ngOnInit() {  
+    this.idFuncLogado = parseInt(JSON.parse(localStorage.getItem("usuario"))["id"])
     this.funcService.listarFuncionarios().subscribe(data => {
       this.listarFuncionarios = data as Funcionario[]
     });
-  }
-
-  ngAfterViewInit() {
-    this.idEditFuncionario = this.child.message
   }
 
   updateStatusFuncionario(id: number, status:string){
@@ -32,8 +29,4 @@ export class ListarFuncionarioComponent implements OnInit, AfterViewInit {
       });
   }
 
-  editFuncionario(id: number){
-    this.idEditFuncionario = id;
-    this.router.navigate(['/editarfuncionario']);
-  }
 }
