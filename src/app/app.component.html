@@ -11,47 +11,75 @@
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
-  <a class="navbar-brand" href="#">
-    <img src="../assets/img/logo.png" style="height: 30px;">
-  </a>
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div id="navb" class="navbar-collapse collapse hide">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/home">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/sobre">Sobre nós</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/parcerias">Parcerias</a>
-      </li>
-    </ul>
-
-    <ul class="nav navbar-nav ml-auto">
-      <li class="nav-item">
-        
-          <ng-template [ngIf]="!loggedIn">
-            <a id="linkLogInOut"  (click)="this.logInOut()" class="nav-link" style="cursor: pointer;"><span class="fas fa-sign-in-alt"></span> Login</a>
-          </ng-template>
-
-
-        <ng-template [ngIf]="loggedIn">
-          <a id="linkLogInOut"  (click)="this.logInOut()" class="nav-link" style="cursor: pointer;"><span class="fas fa-sign-out-alt"></span> Logout</a>
-        </ng-template>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<router-outlet></router-outlet>
-
-<footer class="page-footer font-small unique-color-dark" style="background-color: #353a40; color: white;">
-  <div class="footer-copyright text-center py-3">© 2019 Copyright:
-      <a href=""> Partiu!</a>
-  </div>
-        <!-- Copyright -->
-</footer>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side">
+      <b>Menu</b>
+      <p></p>
+      <ul>
+        <li id="back" routerLink="/home">Home</li>
+      </ul>
+      <ul>
+        <li id="back" routerLink="/listarfuncionario">Funcionários</li>
+      </ul>
+      <ul>
+        <li id="back" routerLink="/listarcardapio">Itens do Cardápio</li>
+      </ul>
+      <ul>
+        <li id="back" routerLink="/relatorio">Relatórios</li>
+      </ul>
+      <ul>
+        <li id="back" routerLink="/mineracao">Avaliações</li>
+      </ul>
+      <ul>
+        <li id="back" routerLink="/parcerias">Parcerias</li>
+      </ul>
+      <ul>
+        <li id="back" routerLink="/sobre">Sobre nós</li>
+      </ul>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+          <a class="btn btn-sm" (click)="sidenav.toggle()">
+          <div class="container">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </div>
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navb" class="navbar-collapse collapse hide">
+          <ul class="navbar-nav">
+            <!-- <li class="nav-item"> -->
+              <a class="nav-link">Bem Vindo ao Painel de Gerenciamento do PARTIU!</a>
+            <!-- </li> -->
+          </ul>
+      
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+              
+                <ng-template [ngIf]="!loggedIn">
+                  <a id="linkLogInOut"  (click)="this.logInOut()" class="nav-link" style="cursor: pointer;"><span class="fas fa-sign-in-alt"></span> Login</a>
+                </ng-template>
+      
+      
+              <ng-template [ngIf]="loggedIn">
+                <a id="linkLogInOut"  (click)="this.logInOut()" class="nav-link" style="cursor: pointer;"><span class="fas fa-sign-out-alt"></span> Logout</a>
+              </ng-template>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+      <router-outlet></router-outlet>
+      
+      <footer class="page-footer font-small unique-color-dark" style="background-color: #353a40; color: white;">
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+            <a href=""> Partiu!</a>
+        </div>
+              <!-- Copyright -->
+      </footer>
+      
+    </mat-sidenav-content>
+  </mat-sidenav-container>

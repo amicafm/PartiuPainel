@@ -1,5 +1,6 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 html, body {
-    background-color:#3f444b;
+    background-color:#212529 !important;
+    height: 100%;
 }

@@ -5,39 +5,39 @@
     <div class="container register">
         <div class="row">
             <div class="col-md-11 register-right">
-                <form [formGroup]="formGroup" id="form" novalidate>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            <h3 class="register-heading"><a routerLink="/listarcardapio"><img src="../../../assets/img/seta.png" style="height: 60px; width: 60px; margin-right: 20px;"></a>Edite o item do seu cardápio :)</h3>
-                            <div class="row register-form">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="nomeItem">Nome: </label><input id="nomeItem" type="text" class="form-control" formControlName="nome" [(ngModel)]="item.nome" placeholder="Nome do item" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                            <label for="categoriaItem">Categoria: </label><input id="categoriaItem" type="text" class="form-control" formControlName="categoria" [(ngModel)]="item.categoria" placeholder="Categoria" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                            <label for="valorItem">Valor: </label><input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }" id="valorItem" type="text" class="form-control" formControlName="valor" [(ngModel)]="item.valor" placeholder="Valor" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                            <label for="descricaoItem">Descricao: </label><input id="descricaoItem" type="text" class="form-control" formControlName="detalhe" [(ngModel)]="item.detalhe" placeholder="0,00" value="" />
-                                    </div>
-                                    <div class="form-group">
-                                            <label for="valorItem">Status: </label><select id="valorItem" class="form-control" formControlName="status" [(ngModel)]="item.status" value={{item.status}}>
-                                                <option value="A">Ativo</option>
-                                                <option value="I">Inativo</option>
-                                            </select>
-                                    </div>
-                                    <div style="margin-top: 50px;">
-                                        <button type="button" class="btnRegister" (click)="this.editarItem()">Editar </button>
-                                    </div>
-
+                    <form [formGroup]="formGroup" id="form" novalidate>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <h3 class="register-heading"><a routerLink="/listarcardapio"><img src="../../../assets/img/seta.png" style="height: 60px; width: 60px; margin-right: 20px;"></a>Cadastre um novo item</h3>
+                                    <div class="row register-form">
+                                        <div class="col-md-6">
+                                        <div class="form-group">
+                                                <label for="nomeItem">Nome: </label><input id="nomeItem" type="text" class="form-control" formControlName="nome"  placeholder="Nome do item" value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                    <label for="categoriaItem">Categoria: </label><input id="categoriaItem" type="text" class="form-control" formControlName="categoria"  placeholder="Categoria" value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                    <label for="valorItem">Valor: </label><input currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',', align: 'left' }" id="valorItem" type="text" class="form-control" formControlName="valor" placeholder="R$ 00,00" value="" />
+                                            </div></div>
+                                            <div class="col-md-6">
+                                            <div class="form-group">
+                                                    <label for="descricaoItem">Descricao: </label><input id="descricaoItem" type="text" class="form-control" formControlName="detalhe"  placeholder="Descrição do item" value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                    <label for="valorItem">Status: </label><select id="valorItem" class="form-control" formControlName="status" [(ngModel)]='defaultAtivo'>
+                                                        <option selected value="A">Ativo</option>
+                                                        <option value="I">Inativo</option>
+                                                    </select>
+                                            </div>
+                                            <div style="margin-top: 50px;">
+                                                <button type="button" class="btnRegister" (click)="this.criarItem()">Cadastrar </button>
+                                            </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </form>
+                    </form>
             </div>
         </div>
     </div>

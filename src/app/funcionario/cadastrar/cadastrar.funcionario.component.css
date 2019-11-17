@@ -13,10 +13,7 @@ body{
 .row{
     justify-content: center;
 }
-.register{
-    background: #3f444b;
-    padding: 4%;
-}
+
 .register-left{
     text-align: center;
     color: #fff;
@@ -62,12 +59,11 @@ body{
     margin-top: -9%;
 }
 .register .register-form{
-    padding: 10%;
+    padding: 5%;
     margin-top: 10%;
 }
 .btnRegister{
     float: right;
-    margin-top: 10%;
     border: none;
     border-radius: 1.5rem;
     padding: 2%;

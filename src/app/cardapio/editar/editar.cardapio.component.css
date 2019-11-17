@@ -1,3 +1,11 @@
+.ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+
 body{
     background: #3f444b;
 }
@@ -5,9 +13,9 @@ body{
 .row{
     justify-content: center;
 }
-.register{
-    background: #3f444b;
-    padding: 4%;
+
+#form {
+    height: 550px;
 }
 .register-left{
     text-align: center;

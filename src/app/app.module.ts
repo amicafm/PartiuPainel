@@ -23,6 +23,8 @@ import { RelatorioComponent } from './relatorio/relatorio.component';
 import { MineracaoComponent } from './mineracao/mineracao.component';
 import { NgxCurrencyModule } from "ngx-currency";
 import { RatingModule } from 'ng-starrating';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import * as Material from '@angular/material';
 
 
 const appRoutes: Routes = [
@@ -67,6 +69,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
       { enableTracing: true } // <-- debugging purposes only
     ),
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
@@ -74,7 +77,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     ChartsModule,
     NgxMaskModule.forRoot(options),
     NgxCurrencyModule,
-    RatingModule
+    RatingModule,
+    Material.MatSidenavModule
   ],
   providers: [LoginService],
   bootstrap: [AppComponent], 
