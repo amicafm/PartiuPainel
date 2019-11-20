@@ -17,8 +17,8 @@ export class MediadorComponent implements OnInit {
     this.restaurante = JSON.parse(localStorage.getItem('restaurante'));
     this.usuario = JSON.parse(localStorage.getItem('usuario'));
     if(!this.usuario){
-      console.log("Não logado")
-      this.router.navigate(['/login/']);
+      // console.log("Não logado")
+      // this.router.navigate(['/login/']);
     }else{
       console.log("USUARIO:")
       console.log(this.usuario)
