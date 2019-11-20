@@ -10,7 +10,7 @@ mat-sidenav-container {
 
 mat-sidenav {
     padding: 16px;
-    background-color: lightsalmon;
+    background-color:#f8bf66;;
     width: 200px;
 }
 
@@ -35,3 +35,22 @@ mat-sidenav {
     li:hover {
  background-color: rgba(255,255,255,0.1);
       }
+
+
+      #navbar-menu-items{
+          padding-left: 0;
+      }
+
+#back{
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+#back>.fas{
+    width: 30px;
+    text-align: center;
+}
+
+.row{
+    padding-top: 200px;
+}

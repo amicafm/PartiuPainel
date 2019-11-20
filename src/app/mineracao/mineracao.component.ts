@@ -16,7 +16,7 @@ export class MineracaoComponent implements OnInit {
   emocao1: string
   emocao2: string
   emocao3: string
-  
+
   constructor(private mineracaoService: MineracaoService) { }
 
   ngOnInit() {  

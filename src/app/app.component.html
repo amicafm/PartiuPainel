@@ -12,29 +12,20 @@
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
 <mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side">
+    <mat-sidenav #sidenav mode="side" >
       <b>Menu</b>
       <p></p>
-      <ul>
-        <li id="back" routerLink="/home">Home</li>
-      </ul>
-      <ul>
-        <li id="back" routerLink="/parcerias">Parcerias</li>
-      </ul>
-      <ul>
-        <li id="back" routerLink="/sobre">Sobre nós</li>
-      </ul>
-      <ul>
-        <li id="back" routerLink="/listarfuncionario">Funcionários</li>
-      </ul>
-      <ul>
-        <li id="back" routerLink="/listarcardapio">Cardápio</li>
-      </ul>
-      <!-- <ul>
-        <li id="back" routerLink="/relatorio">Relatórios</li>
-      </ul> -->
-      <ul>
-        <li id="back" routerLink="/mineracao">Avaliações</li>
+      <ul (click)="sidenav.toggle()" id="navbar-menu-items">
+        <li id="back" routerLink="/home" (click)="sidenav.active()"><span class="fas fa-home"></span> Home</li>
+    
+        <li id="back" routerLink="/parcerias"><span class="fas fa-handshake"></span>Parcerias</li>
+ 
+        <li id="back" routerLink="/sobre"><span class="fas fa-info"></span> Sobre Nós</li>
+
+        <li id="back" routerLink="/listarfuncionario"><span class="fas fa-users"></span> Funcionários</li>
+        <li id="back" routerLink="/listarcardapio"><span class="fas fa-list-alt"></span> Cardápio</li>
+        <!-- <li id="back" routerLink="/relatorio">Relatórios</li> -->
+        <li id="back" routerLink="/mineracao"><span class="fas fa-star"></span> Avaliações</li>
       </ul>
      
     </mat-sidenav>
@@ -76,10 +67,7 @@
       <router-outlet></router-outlet>
       
       <footer class="page-footer font-small unique-color-dark" style="background-color: #353a40; color: white;">
-        <div class="footer-copyright text-center py-3">© 2019 Copyright:
-            <a href=""> Partiu!</a>
-        </div>
-              <!-- Copyright -->
+        <div class="footer-copyright text-center py-3" >Partiu © 2019</div>
       </footer>
       
     </mat-sidenav-content>
