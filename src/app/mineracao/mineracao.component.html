@@ -2,6 +2,9 @@
         <!-- linha de avaliaçõpes em estrelas -->
         <div class="row">
             <!-- coluna de avaliação geral estabelecimento -->
+            <div class="col-3 text-left">
+                    <a routerLink="/mediador" style="justify-content: left;"><img src="../../../assets/img/setab.png" style="height: 60px; width: 60px;"></a>
+                </div>
             <div class="col mt-3" [ngSwitch]="mediaEstabelecimento">
                 <h6>Classificação do seu estabelecimento:</h6>
                 <!-- carrega caso seja 5 estrelas -->
