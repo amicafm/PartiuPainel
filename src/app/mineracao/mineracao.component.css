@@ -15,11 +15,6 @@ h6, h3 {
 	width: 90px;
 }
 
-thead, tbody{
-	display: block;  
-  }
-  
-  tbody{
-	overflow-y: scroll;
-	height: 350px;
+	.table{
+		margin-bottom: 100px;
 	}

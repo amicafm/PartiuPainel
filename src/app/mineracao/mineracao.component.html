@@ -64,7 +64,7 @@
         <!-- linha de emoções e tabela de comentarios -->
         <div class="row mt-5">
         <div class="col-3">
-                <h6>Humor dos seus clientes:</h6>
+                <h6>Sentimento dos seus clientes:</h6>
                 <div class="row">
                 <div class="col">
                 <img src="../../assets/img/emocoes.png">
@@ -88,20 +88,20 @@
                 </div>
             </div>
             </div>
-    <div class="col-8">   
+    <div class="col-9">   
             <h3>Ultimos comentários:</h3>
 <table class="table table-dark">
     <thead>
         <tr>
-            <th scope="col">Estrelas</th>
-            <th scope="col">Sentimento</th>
-            <th scope="col">Comentário</th>
+            <th >Estrelas</th>
+            <th >Sentimento</th>
+            <th >Comentário</th>
         </tr>
     </thead>
     <tbody *ngFor="let avaliacao of listaAvaliacoes">     
-
-        <tr [ngSwitch]="avaliacao.avEstabelecimento">
-            <td>
+        
+        <tr>
+            <th [ngSwitch]="avaliacao.avEstabelecimento">
                 <!-- carrega caso seja 5 estrelas -->
                 <a *ngSwitchCase="5">
                     <img src="../../assets/img/estrelas/5estrelas.png" class="estrelas">
@@ -126,8 +126,27 @@
                 <a *ngSwitchCase="0">
                     <img src="../../assets/img/estrelas/vazias.png" class="estrelas">
                 </a>
+            </th>
+
+            <td [ngSwitch]="avaliacao.bayesEstabelecimento">
+                <!-- carrega caso seja 5 estrelas -->
+                <a *ngSwitchCase="0">
+                    Totalmente Insatisfeito
+                </a>
+                <!-- carrega caso seja 4 estrelas -->
+                <a *ngSwitchCase="1">
+                    Insatisfeito
+                </a>
+                <!-- carrega caso seja 3 estrelas -->
+                <a *ngSwitchCase="2">
+                    Satisfeito
+                </a>
+                <!-- carrega caso seja 2 estrelas -->
+                <a *ngSwitchCase="3">
+                    Totalmente Satisfeito
+                </a>
             </td>
-            <td>{{avaliacao.bayesEstabelecimento}}</td>
+            <!-- <td>{{avaliacao.bayesEstabelecimento}}</td> -->
             <td>{{avaliacao.descEstabelecimento}}</td>
         </tr>
     </tbody>
