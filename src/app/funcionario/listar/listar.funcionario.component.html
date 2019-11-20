@@ -36,8 +36,9 @@
                         <td>{{'('+funcionario.ddd+') '+funcionario.telefone}}</td>
                         <td>
     
-                                <ng-template [ngIf]="funcionario.id != idFuncLogado">
+                                
                             <button type="button" class="btn btn-primary" [routerLink]="[ '/editarfuncionario',funcionario.id]">Editar</button>
+                            <ng-template [ngIf]="funcionario.id != idFuncLogado">
                             <ng-template [ngIf]="funcionario.status == 'I'">
                                     <button type="button" class="btn btn-danger" (click)="updateStatusFuncionario(funcionario.id, 'A')">Ativar</button>
                             </ng-template>

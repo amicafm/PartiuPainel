@@ -15,7 +15,7 @@ body{
 }
 
 #form {
-    height: 550px;
+    height: auto;
 }
 .register-left{
     text-align: center;
@@ -62,12 +62,11 @@ body{
     margin-top: -9%;
 }
 .register .register-form{
-    padding: 10%;
+    padding: 5%;
     margin-top: 10%;
 }
 .btnRegister{
     float: right;
-    margin-top: 10%;
     border: none;
     border-radius: 1.5rem;
     padding: 2%;
