@@ -13,9 +13,9 @@ body{
 .row{
     justify-content: center;
 }
-.register{
-    background: #3f444b;
-    padding: 4%;
+
+#form {
+    height: 550px;
 }
 .register-left{
     text-align: center;

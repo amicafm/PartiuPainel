@@ -11,58 +11,64 @@
 <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
-<nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
-  <a class="navbar-brand" href="#">
-    <img src="../assets/img/logo.png" style="height: 30px;">
-  </a>
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div id="navb" class="navbar-collapse collapse hide">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" id="navLink1" routerLink="/home">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="navLink2" routerLink="/sobre">Sobre nós</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="navLink3" routerLink="/parcerias">Parcerias</a>
-      </li>
-    </ul>
-      <!-- <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/listarfuncionario">Funcionários</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/listarcardapio">Cardápio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/mineracao">Feedback</a>
-        </li>
-      </ul> -->
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" >
+      <b>Menu</b>
+      <p></p>
+      <ul (click)="sidenav.toggle()" id="navbar-menu-items">
+        <li id="back" routerLink="/home" (click)="sidenav.active()"><span class="fas fa-home"></span> Home</li>
+    
+        <li id="back" routerLink="/parcerias"><span class="fas fa-handshake"></span>Parcerias</li>
+ 
+        <li id="back" routerLink="/sobre"><span class="fas fa-info"></span> Sobre Nós</li>
 
-    <ul class="nav navbar-nav ml-auto">
-      <li class="nav-item">
-        
-          <ng-template [ngIf]="!loggedIn">
-            <a id="linkLogInOut"  (click)="this.logInOut()" class="nav-link" style="cursor: pointer;"><span class="fas fa-sign-in-alt"></span> Login</a>
-          </ng-template>
-
-
-        <ng-template [ngIf]="loggedIn">
-          <a id="linkLogInOut"  (click)="this.logInOut()" class="nav-link" style="cursor: pointer;"><span class="fas fa-sign-out-alt"></span> Logout</a>
-        </ng-template>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<router-outlet></router-outlet>
-
-<footer class="page-footer font-small unique-color-dark" style="background-color: #353a40; color: white;">
-  <div class="footer-copyright text-center py-3">© 2019 Copyright:
-      <a href=""> Partiu!</a>
-  </div>
-        <!-- Copyright -->
-</footer>
+        <li id="back" routerLink="/listarfuncionario"><span class="fas fa-users"></span> Funcionários</li>
+        <li id="back" routerLink="/listarcardapio"><span class="fas fa-list-alt"></span> Cardápio</li>
+        <!-- <li id="back" routerLink="/relatorio">Relatórios</li> -->
+        <li id="back" routerLink="/mineracao"><span class="fas fa-star"></span> Avaliações</li>
+      </ul>
+     
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark sticky-top">
+          <a class="btn btn-sm" (click)="sidenav.toggle()">
+          <div class="container">
+              <div class="bar1"></div>
+              <div class="bar2"></div>
+              <div class="bar3"></div>
+            </div>
+        </a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-expanded="true">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navb" class="navbar-collapse collapse hide">
+          <ul class="navbar-nav">
+            <!-- <li class="nav-item"> -->
+              <a class="nav-link">Bem-Vindo ao Painel de Gerenciamento do PARTIU!</a>
+            <!-- </li> -->
+          </ul>
+      
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+              
+                <ng-template [ngIf]="!loggedIn">
+                  <a id="linkLogInOut"  (click)="this.logInOut()" class="nav-link" style="cursor: pointer;"><span class="fas fa-sign-in-alt"></span> Login</a>
+                </ng-template>
+      
+      
+              <ng-template [ngIf]="loggedIn">
+                <a id="linkLogInOut"  (click)="this.logInOut()" class="nav-link" style="cursor: pointer;"><span class="fas fa-sign-out-alt"></span> Logout</a>
+              </ng-template>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      
+      <router-outlet></router-outlet>
+      
+      <footer class="page-footer font-small unique-color-dark" style="background-color: #353a40; color: white;">
+        <div class="footer-copyright text-center py-3" >Partiu © 2019</div>
+      </footer>
+      
+    </mat-sidenav-content>
+  </mat-sidenav-container>

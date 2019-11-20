@@ -32,6 +32,8 @@ export class EditarFuncionarioComponent implements OnInit {
       this.funcionario = data[0] as Funcionario;
       this.funcionario.telcompleto=this.funcionario.ddd+""+this.funcionario.telefone
       console.log(this.funcionario);
+      if (JSON.parse(localStorage.getItem('usuario'))["id"] == this.funcionario.id)
+      document.getElementById("tipo").setAttribute("disabled", "disabled")
     });
   }
   

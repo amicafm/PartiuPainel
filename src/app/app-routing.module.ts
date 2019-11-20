@@ -13,23 +13,24 @@ import { ParceriasComponent } from './widgets/parcerias/parcerias.component';
 import { SobreComponent } from './widgets/sobre/sobre.component';
 import { RelatorioComponent } from './relatorio/relatorio.component';
 import { MineracaoComponent } from './mineracao/mineracao.component';
+import {AuthGuardService} from './services/guards/auth-guard.service';
 
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full'},
-  { path: 'mediador', component: MediadorComponent },
-  { path: 'cadastrarfuncionario', component: CadastrarFuncionarioComponent },
-  { path: 'listarfuncionario', component: ListarFuncionarioComponent },
-  { path: 'editarfuncionario/:id', component: EditarFuncionarioComponent },
-  { path: 'cadastrarcardapio', component: CadastrarCardapioComponent },
-  { path: 'editarcardapio/:id', component: EditarCardapioComponent },
-  { path: 'listarcardapio', component: ListarCardapioComponent },
   { path: 'home', component: HomeComponent },
   { path: 'parcerias', component: ParceriasComponent },
   { path: 'sobre', component: SobreComponent },
-  { path: 'relatorio', component: RelatorioComponent },
-  { path: 'mineracao', component: MineracaoComponent }
+  { path: 'mediador', component: MediadorComponent, canActivate: [AuthGuardService] },
+  { path: 'cadastrarfuncionario', component: CadastrarFuncionarioComponent, canActivate: [AuthGuardService] },
+  { path: 'listarfuncionario', component: ListarFuncionarioComponent, canActivate: [AuthGuardService] },
+  { path: 'editarfuncionario/:id', component: EditarFuncionarioComponent, canActivate: [AuthGuardService] },
+  { path: 'cadastrarcardapio', component: CadastrarCardapioComponent, canActivate: [AuthGuardService] },
+  { path: 'editarcardapio/:id', component: EditarCardapioComponent, canActivate: [AuthGuardService] },
+  { path: 'listarcardapio', component: ListarCardapioComponent, canActivate: [AuthGuardService] },
+  { path: 'relatorio', component: RelatorioComponent, canActivate: [AuthGuardService] },
+  { path: 'mineracao', component: MineracaoComponent, canActivate: [AuthGuardService] }
 ];
 
 @NgModule({

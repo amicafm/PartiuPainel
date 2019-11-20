@@ -1,19 +1,8 @@
-.aqui{
-    position:absolute;
-	top:10;
-	left:0;
-	z-index:11;
-	background-color:#21242b;
-	width:100%;
-	height:85%;
-	padding:0 2%;
-}
 
-#topo{
+.topo{
 	color: #ffff;
 	font-size: 28px;
 	font-weight: bold;
-	display: flex;
 	background-color: #21242b;
 }
 
@@ -21,3 +10,13 @@
 	display: flex;
 	justify-content: flex-end;
 }
+ input {
+	width: 250px;
+	height: 25px;
+ }
+
+ #filtro{
+	 font-weight: bold;
+	 font-size: 20px;
+	 color: white;
+ }

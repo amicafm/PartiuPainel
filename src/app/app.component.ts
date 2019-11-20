@@ -37,7 +37,7 @@ export class AppComponent implements OnInit{
     if (localStorage.getItem('usuario') != null){
       localStorage.clear();
      document.getElementById("linkLogInOut").innerHTML='<span class="fas fa-sign-in-alt"></span> Login'
-    }else{
+    }else{if (localStorage.getItem('usuario') != null)
     document.getElementById("linkLogInOut").innerHTML='<span class="fas fa-sign-out-alt"></span> Logout'
   }
     this.router.navigate(['/login/']);
