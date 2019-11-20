@@ -4,3 +4,7 @@ footer {
     width:100%;
 }
 
+#navDeslogado{
+    display: none;
+}
+
