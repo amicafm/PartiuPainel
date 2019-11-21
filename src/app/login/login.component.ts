@@ -52,7 +52,6 @@ export class LoginComponent implements OnInit {
           
           document.getElementById("linkLogInOut").innerHTML='<span class="fas fa-sign-out-alt"></span> Logout'
 
-          this.setNavbarLogado()
           console.log("Usuario logado; email = "+data["email"])
           this.router.navigate(['/mediador/']);
         })
@@ -61,38 +60,9 @@ export class LoginComponent implements OnInit {
         console.log("Usuario Invalido")
         if(data["tipo"]=="cliente" || data["tipo"]=="garcom") console.log("Não é gerente")
         if(data["status"]=="I") console.log("Usuario Inativo")
-        this.setNavbarDeslogado()
       }
     })
   }
 
-  setNavbarLogado(){
-    let nav1 =  document.getElementById("navLink1")
-    let nav2 =  document.getElementById("navLink2")
-    let nav3 =  document.getElementById("navLink3")
 
-    nav1.setAttribute("routerLink","/listarfuncionario")
-    nav1.innerHTML = "Funcionários"
-
-    nav2.setAttribute("routerLink","/listarcardapio")
-    nav2.innerHTML = "Cardápio"
-
-    nav3.setAttribute("routerLink","/mineracao")
-    nav3.innerHTML = "Feedback"
-  }
-
-  setNavbarDeslogado(){
-    let nav1 =  document.getElementById("navLink1")
-    let nav2 =  document.getElementById("navLink2")
-    let nav3 =  document.getElementById("navLink3")
-
-    nav1.setAttribute("routerLink","/home")
-    nav1.innerHTML = "Home"
-
-    nav2.setAttribute("routerLink","/sobre")
-    nav2.innerHTML = "Sobre Nós"
-
-    nav3.setAttribute("routerLink","/parcerias")
-    nav3.innerHTML = "Parcerias"
-  }
 }
