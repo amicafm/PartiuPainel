@@ -32,7 +32,7 @@ export class EditarCardapioComponent implements OnInit {
         nome: ['', Validators.required],
         categoria: ['', Validators.required],
         valor: ['', Validators.required],
-        detalhe: ['', Validators.required],
+        detalhe: ['', ],
         status: ['', Validators.required]
     });
   }
@@ -50,6 +50,7 @@ export class EditarCardapioComponent implements OnInit {
     let categoria = this.formGroup.get("categoria").value;
     let valor = this.formGroup.get("valor").value;
     let detalhe = this.formGroup.get("detalhe").value;
+    if (detalhe=="") detalhe="-"
     let status = this.formGroup.get("status").value;
 
     this.cardapioService.editItem(this.itemId, nome, categoria, valor, detalhe, status).subscribe(data => {
